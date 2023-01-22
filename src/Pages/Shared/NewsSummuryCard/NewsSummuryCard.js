@@ -7,7 +7,6 @@ import { FaEye, FaRegBookmark, FaShareAlt, FaStar } from 'react-icons/fa';
 
 const NewsSummuryCard = ({ news }) => {
     const { _id, title, author, details, image_url, rating, total_view } = news;
-    console.log(news)
     return (
         <Card>
             <Card.Header className='d-flex justify-content-between align-items-center'>
@@ -33,8 +32,8 @@ const NewsSummuryCard = ({ news }) => {
                 <Card.Text>
                     {
                         details.length > 250 ?
-                            <p>{details.slice(0, 250) + '...'}<Link to={`/news/${_id}`}>Read More</Link></p> :
-                            <p>{details}</p>
+                            <>{details.slice(0, 250) + '...'}<Link to={`/news/${_id}`}>Read More</Link></> :
+                            details
                     }
                 </Card.Text>
             </Card.Body>
